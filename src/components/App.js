@@ -7,27 +7,24 @@ import React from 'react';
 
 
 function App() {
-
   const [iseditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState({});
+  const [isImageOpen, setIsImageOpen] = React.useState(false);
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true)
   };
 
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true)
   };
 
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
 
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true)
   };
-
-  const [selectedCard, setSelectedCard] = React.useState({});
-  const [isImageOpen, setIsImageOpen] = React.useState(false);
 
   function handleCardClick(card) {
     setIsImageOpen(true)
@@ -39,6 +36,7 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsImageOpen(false);
+    setSelectedCard({});
   }
 
 
