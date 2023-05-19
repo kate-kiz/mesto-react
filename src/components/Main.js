@@ -5,7 +5,7 @@ import addButton from '../images/add_button.svg';
 import Card from './Card';
 import api from '../utils/Api';
 
-function Main(props) {
+function Main({ onAddPlace, onCardClick, onEditAvatar, onEditProfile }) {
     const [cards, setCards] = React.useState([]);
     const [userName, setUserName] = React.useState('');
     const [userDescription, setUserDescription] = React.useState('');
@@ -39,7 +39,7 @@ function Main(props) {
             <section className="profile">
                 <div className="profile__avatar">
                     <img src={userAvatar} className="profile__image" alt={userName} />
-                    <button className="profile__edit-avatar" type="button" onClick={props.onEditAvatar}>
+                    <button className="profile__edit-avatar" type="button" onClick={onEditAvatar}>
                         <img
                             className="profile__pen"
                             src={editAvatarButton}
@@ -50,7 +50,7 @@ function Main(props) {
                 <div className="profile__info">
                     <div className="profile__container">
                         <h1 className="profile__name">{userName}</h1>
-                        <button type="button" className="profile__edit-button" onClick={props.onEditProfile}>
+                        <button type="button" className="profile__edit-button" onClick={onEditProfile}>
                             <img
                                 src={editButton}
                                 className="profile__edit-logo"
@@ -60,7 +60,7 @@ function Main(props) {
                     </div>
                     <p className="profile__text">{userDescription}</p>
                 </div>
-                <button type="button" className="profile__add-button" onClick={props.onAddPlace}>
+                <button type="button" className="profile__add-button" onClick={onAddPlace}>
                     <img
                         src={addButton}
                         className="profile__add-logo"
@@ -76,7 +76,7 @@ function Main(props) {
                         title={card.name}
                         likeCounter={card.likes.length}
                         image={card.link}
-                        onCardClick={props.onCardClick}
+                        onCardClick={onCardClick}
                     />)
                 })}
             </section>
