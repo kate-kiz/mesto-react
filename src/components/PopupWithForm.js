@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PopupWithForm({ name, title, buttonText, children, isOpen, onClose }) {
+function PopupWithForm({ name, title, buttonText, children, isOpen, onClose, onSubmit }) {
     return (
         <div className={`popup popup_${name} ${isOpen ? `popup_opened` : ``}`}>
             <div className="popup__place-container">
@@ -11,6 +11,7 @@ function PopupWithForm({ name, title, buttonText, children, isOpen, onClose }) {
                     name={name}
                     id="popup__form_places"
                     noValidate=""
+                    onSubmit={onSubmit}
                 >
                     {children}
                 </form>

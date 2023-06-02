@@ -16,10 +16,11 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
     }
 
     function handleSubmit(evt) {
+        console.log("lalala")
         evt.preventDefault();
         onAddPlace({
-            title,
             link,
+            name: title,
         });
     }
 
