@@ -9,13 +9,13 @@ function PopupWithForm({ name, title, buttonText, children, isOpen, onClose, onS
                 <form
                     className="popup__form"
                     name={name}
-                    id="popup__form_places"
+                    id={`popup__form_${name}`}
                     noValidate=""
                     onSubmit={onSubmit}
                 >
                     {children}
                 </form>
-                <button className="popup__button" type="submit" form="popup__form_places">
+                <button className="popup__button" type="submit" form={`popup__form_${name}`}>
                     {buttonText}
                 </button>
             </div>
